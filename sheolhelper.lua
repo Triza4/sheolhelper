@@ -30,7 +30,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. ]]
 
 _addon.name = 'SheolHelper'
 _addon.author = 'Deridjian'
-_addon.version = 1.1
+_addon.version = 1.2
 _addon.commands = {'sheolhelper', 'sheol', 'shh'}
 
 config = require('config')
@@ -191,6 +191,7 @@ end)
 
 windower.register_event('outgoing chunk', function(id, data, modified, injected, blocked)
     if
+        sheolzone and
         sheolzone ~= 4 and
         (windower.ffxi.get_info().zone == 298 or windower.ffxi.get_info().zone == 279)
         and id == 0x05B and not
